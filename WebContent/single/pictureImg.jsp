@@ -10,19 +10,16 @@
 <body>
 	1) upload 폴더를 만들어야한다(/upload)
 	<%
-String path = application.getRealPath("/")+"upload/";
+	String path = application.getRealPath("/") + "upload/";
 String filename = null;
-MultipartRequest multi = new MultipartRequest(request, path, 10*1024*1024, "utf-8");
-filename =multi.getFilesystemName("picture"); //pictureForm의 picture
-
-
+MultipartRequest multi = new MultipartRequest(request, path, 10 * 1024 * 1024, "utf-8");
+filename = multi.getFilesystemName("picture"); //pictureForm의 picture
 %>
-<script>
+	<script>
 const img = opener.document.querySelector("#pic")
 img.src ="<%=request.getContextPath()%>/upload/<%=filename%>"
 opener.document.f.picture.value="<%=filename%>"
-self.close();
-
-</script>
+		self.close();
+	</script>
 </body>
 </html>

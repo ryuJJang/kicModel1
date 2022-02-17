@@ -10,7 +10,7 @@
 <hr>
 	<!-- login start -->
 	<div class="container">
-		<h2   id="center">회원정보수정</h2>
+		<h2   id="center">로그인</h2>
 		<form action="<%=request.getContextPath() %>/view/member/LoginPro.jsp" method="post">
 		<div class="form-group">
 			<label>Name:</label> <input type="text"

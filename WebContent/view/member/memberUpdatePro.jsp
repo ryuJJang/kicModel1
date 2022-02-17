@@ -31,12 +31,16 @@ if (login == null || login.trim().equals("")) {
 String email = request.getParameter("email");
 String tel = request.getParameter("tel");
 String pass = request.getParameter("pass");
+String picture = request.getParameter("picture");
 MemberDao md = new MemberDao();
 Member mem = md.selectOne(login);
 
 //member에 email, tel을 저장
 mem.setEmail(email);
 mem.setTel(tel);
+mem.setPicture(picture);
+
+System.out.println(mem);
 
 
 
@@ -44,7 +48,7 @@ mem.setTel(tel);
 
 if(mem.getPass().equals(pass)){
 	num = md.memberUpdate(mem);
-	msg = "회원 정보가 수정 되엇습니다.";
+	msg = "회원 정보가 수정 되었습니다.";
 	url = request.getContextPath()+"/view/main.jsp";
 }
 	
